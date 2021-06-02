@@ -1,0 +1,44 @@
+package Assignment1;
+
+import java.text.DecimalFormat; //1.2 pre-defined class
+
+public class Finance { //1.3 user defined class
+	
+	private double sales;
+	private double employSalary;
+	private double inventExp;
+	private double maintenanceFees;
+	private double utilityFees;
+	private double advertFees;
+	
+	public Finance(double s, double eS, double iE, double mF, double uF, double aF) { // constructor with 6 argument
+		
+		DecimalFormat df = new DecimalFormat("#.##");
+		this.sales = s;
+		this.employSalary = eS;
+		this.inventExp = iE;
+		this.maintenanceFees = mF;
+		this.utilityFees = uF;
+		this.advertFees = aF;
+		
+		
+		System.out.println("Total employee salary   : RM " + this.employSalary);
+		System.out.println("Total inventory expenses: RM " + this.inventExp);
+		System.out.println("Total maintenance fees  : RM " + this.maintenanceFees);
+		System.out.println("Total utility fees      : RM " + this.utilityFees);
+		System.out.println("Total advertisement fees: RM " + this.advertFees);
+		System.out.println("Total expenses          : RM " + df.format(totalExpenses()));
+		System.out.println("Total sales             : RM " + this.sales);
+		System.out.println("Total Net Profit        : RM " + df.format(totalnetProfit()));
+		System.out.println("");
+	}
+	
+	public double totalExpenses() { //method to calculate total expenses
+		return employSalary + inventExp + maintenanceFees + utilityFees + advertFees;
+	}
+	
+	public double totalnetProfit() { //method to calculate total net profit
+		return sales - totalExpenses();
+	}
+
+}
