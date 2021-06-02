@@ -1,0 +1,84 @@
+package Assignment1;
+
+import java.util.Scanner; //1.2 pre-defined class
+
+public class Employee { // 1.3 user defined class
+
+	private String employName;
+	private int PhoneNum;
+	private char gender;
+	private int age;
+	private double salary;
+	private int position;
+	private double totalSalary;
+	private double EPF;
+	private double SOCSO;
+	private double EIS;
+	
+	Scanner in = new Scanner(System.in);
+	public Employee() { //1.4 constructor with no argument
+		
+		EPF=0.06;
+		SOCSO= 4.35;
+		EIS= 2.30;
+		
+		System.out.println("Please enter the name: ");
+		this.employName = in.next();
+		
+		System.out.println("Please enter the phone number: ");
+		this.PhoneNum = in.nextInt();
+		
+		System.out.println("Please enter the age: ");
+		this.age = in.nextInt();
+		
+		System.out.println("Please enter the gender[M - Male, F - Female]: ");
+		this.gender = in.next().charAt(0);
+		
+		System.out.println("Please enter your position[1 - Manager, 2 - Assistant Manager, 3 - Supervisor");
+		this.position = in.nextInt();
+		
+		System.out.println("");
+		System.out.println("Info of Employee");
+		System.out.println("______________________________________");
+		System.out.println("\nName      : " + this.employName);
+		System.out.println("Phone Number: " + this.PhoneNum);
+		System.out.println("Age         : " + this.age + "years");
+		System.out.println("Gender      : " + this.gender);
+		
+		
+		if(position==1) {//if the user choose position 1
+		     salary = 3599.90; // the salary for Manager
+		     totalSalary=totalpaid();
+		     System.out.println("The position of employee choose: Manager");
+		     System.out.println("Basic salary per month         : RM " + salary);
+		     System.out.println("The total paid for Manager     : RM " + totalSalary);
+		}
+		else if(position==2 ) { //if the user choose position 2
+		     double newSalary = 2999.90; //the salary for Assistant Manager
+		     totalSalary = totalpaid(newSalary);
+		     System.out.println("The position of employee choose     : Assistant Manager");
+		     System.out.println("Basic salary per month              : RM " + newSalary);
+		     System.out.println("The total paid for Assistant Manager: RM " + totalSalary);	
+		}
+		else { //if the user choose position 3
+			double newSalary = 2599.90; //the salary for Supervisor
+			double elaun = 600;
+			totalSalary = totalpaid(newSalary, elaun);
+			System.out.println("The position of employee choose: Supervisor");
+			System.out.println("Basic salary per month         : RM " + newSalary);
+			System.out.println("Elaun per month                : RM " + elaun);
+			System.out.println("The total paid for Supervisor  : RM " + totalSalary);
+		}
+	}
+	public double totalpaid() { //overloading method with no argument
+		return this.salary-(salary*EPF)-SOCSO-EIS;
+	}
+	
+	public double totalpaid(double newSalary) { //overloading method with 1 argument
+		return newSalary-(newSalary*EPF)-SOCSO-EIS;
+	}
+	
+	public double totalpaid(double newSalary, double elaun) { //overloading method with 2 arguments
+		return newSalary-(newSalary*EPF)-SOCSO-EIS + elaun;
+	}
+}
