@@ -1,0 +1,44 @@
+package Assignment1;
+
+public class HomestayType { //1.3 user defined class
+	
+	private String type;
+	private String size;
+	private char meal;
+	private char security;
+	
+	public HomestayType(String t, String s, char m, char se) { //1.4 Constructor with 4 argument
+		this.type=t;
+		this.size=s;
+		this.meal=m;
+		this.security=se;
+	}
+	 
+	public String printInfoAuthenticHomestay() { //1.3 User define class
+		return "Type of Homestay                            : " + this.type
+				+ "\nSize                                        : " + this.size
+				+ "\nDoes the homestay has prepare meal[Y/N]     : " + this.meal
+				+ "\nDoes the homestay has 24 hours security[Y/N]: " + this.security
+				+ "\nRate of Homestay                            : 5 Stars "
+				+ "\nDoes the Homestay has Free Wifi             : Yes ";
+	}
+	
+	public String printInfoComfortableHomestay() {
+		return "Type of Homestay                            : " + this.type
+				+ "\nSize                                        : " + this.size
+				+ "\nDoes the homestay has prepare meal[Y/N]     : " + this.meal
+				+ "\nDoes the homestay has 24 hours security[Y/N]: " + this.security
+				+ "\nRate of Homestay                            : 4.5 Stars "
+				+ "\nDoes the Homestay has Free Wifi             : Yes ";
+	}
+	
+	public String printInfoTouristHomestay() {
+		return "Type of Homestay                            : " + this.type
+				+ "\nSize                                        : " + this.size
+				+ "\nDoes the homestay has prepare meal[Y/N]     : " + this.meal
+				+ "\nDoes the homestay has 24 hours security[Y/N]: " + this.security
+				+ "\nRate of Homestay                            : 4.0 Stars "
+				+ "\nDoes the Homestay has Free Wifi             : Yes ";
+	}
+		
+}
