@@ -1,0 +1,66 @@
+package Assignment1;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		System.out.println("-----------------------------------");
+		System.out.println("The Detail Of Homestay");
+		System.out.println("-----------------------------------");
+		System.out.println("");
+		
+		HomestayHostCentre HH = new HomestayHostCentre("SHANGRI_LA",345678, "1A,Jalan Kancil", "abc@gmail.com");
+		System.out.println("");
+		
+		System.out.println("-------------------------------------");
+		System.out.println("Type of Homestay");
+		System.out.println("-------------------------------------");
+		System.out.println("");
+		HomestayType AH = new HomestayType("Authentic Homestay", "Medium", 'Y', 'Y');
+		System.out.println(AH.printInfoAuthenticHomestay());
+		System.out.println("");
+		HomestayType CH = new HomestayType("Comfortable Homestay", "Large", 'Y', 'N');
+        System.out.println(CH.printInfoComfortableHomestay());
+		System.out.println("");
+		HomestayType TH = new HomestayType("Tourist Homestay", "Medium", 'Y', 'Y');
+		System.out.println(TH.printInfoTouristHomestay());
+		System.out.println("");
+		
+		System.out.println("-------------------------------------");
+		System.out.println("Information of Advertisement And Marketing");
+		System.out.println("-------------------------------------");
+		System.out.println("");
+		AdvertisementNMarketing AM = new AdvertisementNMarketing();
+		System.out.println("");
+		
+		System.out.println("-----------------------------------");
+		System.out.println("The Information Of Employee");
+		System.out.println("-----------------------------------");
+		Employee Emp = new Employee();
+		System.out.println("");
+		
+		System.out.println("-----------------------------------");
+		System.out.println("The Information of Customer");
+		System.out.println("-----------------------------------");
+		Customer cu = new Customer();
+		System.out.println("");
+		
+		System.out.println("-----------------------------------");
+		System.out.println("The Report of Sales");
+		System.out.println("-----------------------------------");
+		Sales Sa = new Sales(5980.45);
+		System.out.println("");
+		
+		System.out.println("----------------------------------");
+		System.out.println("Finance Statement for One Month");
+		System.out.println("----------------------------------");
+		Finance Fi = new Finance(35990.88, 5850.50, 899.99, 785.93, 950.59, 588.99 );
+		System.out.println("");
+		
+		
+		
+
+	}
+
+}
