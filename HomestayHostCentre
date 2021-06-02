@@ -1,0 +1,25 @@
+package Assignment1;
+
+public class HomestayHostCentre { //super class
+
+	private String CompanyName;
+	private int CompanyPhoneNum;
+	private String CompanyAdd;
+	private String CompanyWebsite;
+	
+	public HomestayHostCentre(String CN, int PN, String CA, String W) { //1.4 Constructor with argument
+		this.CompanyName=CN;
+		this.CompanyPhoneNum=PN;
+		this.CompanyAdd=CA;
+		this.CompanyWebsite=W;
+		
+		printInfo();
+	}
+	
+	public void printInfo() { //method to print the information of company
+		System.out.println("Company Name        : " + this.CompanyName);
+		System.out.println("Company Phone Number: " + this.CompanyPhoneNum);
+		System.out.println("Company Address     : " + this.CompanyAdd);
+		System.out.println("Company Website     : " + this.CompanyWebsite);
+	}
+}
